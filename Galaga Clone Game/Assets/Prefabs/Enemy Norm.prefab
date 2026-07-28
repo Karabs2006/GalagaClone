@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9141593334331637965}
   - component: {fileID: 3638765028413910758}
   - component: {fileID: 4486717671746897438}
-  - component: {fileID: 3327029853659834811}
   m_Layer: 0
   m_Name: Enemy Norm
   m_TagString: Enemy
@@ -178,23 +177,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3327029853659834811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746621950288806078}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 033c7d2cbfa2eb34986c795048f309cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolSpeed: 5
-  diveSpeed: 12
-  returnSpeed: 8
-  timeBeforeDive: 3
-  diveDelayRange: 2
 --- !u!1 &6266291338759138291
 GameObject:
   m_ObjectHideFlags: 0

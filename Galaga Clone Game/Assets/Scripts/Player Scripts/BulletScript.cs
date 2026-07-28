@@ -20,7 +20,13 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.SetActive(false);
+            Debug.Log("Bullet hit enemy: " + collision.gameObject.name);
+
+            // Destroy the enemy
+            Destroy(collision.gameObject);
+
+            // Destroy the bullet
+            Destroy(gameObject);
         }
     }
 }

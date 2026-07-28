@@ -4,33 +4,48 @@ using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour
 {
-    public float moveSpeed = 15.0f;
+    [Header("Movement")]
+    public float moveSpeed = 3f;
+    public float horizontalSway = 0.9f;
+
     private Rigidbody2D rb;
-    private bool movingRight = true;
+    private float startX;
+    private float timer = 0f;
 
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
-        
-        movingRight = Random.Range(0, 2) == 0;
+        startX = transform.position.x;
+
+        // Start shooting
+        EnemyShoot shoot = GetComponent<EnemyShoot>();
+        if (shoot != null)
+        {
+            shoot.enabled = true;
+        }
     }
 
     void FixedUpdate()
     {
-        if (movingRight)
-            rb.linearVelocity = new Vector2(moveSpeed, 0);
-        else
-            rb.linearVelocity = new Vector2(-moveSpeed, 0);
-    }
+        timer += Time.deltaTime;
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Wall"))
+        float xMovement = Mathf.Sin(timer * 2f) * horizontalSway; // Slight sway
+        float yMovement = -moveSpeed;
+
+        rb.linearVelocity = new Vector2(xMovement, yMovement);
+
+        // Destroy if goes off screen (bottom)
+        if (transform.position.y < -6f)
         {
-            // Flip direction randomness
-            movingRight = !movingRight;
-            moveSpeed = Random.Range(6f, 12f);
+            Destroy(gameObject);
         }
     }
+
+    void OnDestroy()
+    {
+        Destroy(gameObject);
+    }
 }
+
 

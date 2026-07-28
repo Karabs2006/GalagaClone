@@ -13,6 +13,22 @@ PrefabInstance:
       value: Enemy Norm Test Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4486717671746897438, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: m_Size.x
+      value: 4.736009
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486717671746897438, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: m_Size.y
+      value: 4.9850817
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486717671746897438, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.24906707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486717671746897438, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.28680038
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486717671746897438, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
       value: 0.5
       objectReference: {fileID: 0}
@@ -38,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6037076417473955103, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.04
+      value: 1.231818
       objectReference: {fileID: 0}
     - target: {fileID: 6037076417473955103, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.05
+      value: -5.488883
       objectReference: {fileID: 0}
     - target: {fileID: 6037076417473955103, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: m_LocalPosition.z
@@ -96,6 +112,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8745410758908611563, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3627850369060606857, guid: 6e56b15c81e9d654a9ce7df187d45177, type: 3}
+    - target: {fileID: 8745410758908611563, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745410758908611563, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: bulletSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745410758908611563, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 3627850369060606857, guid: 6e56b15c81e9d654a9ce7df187d45177, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
