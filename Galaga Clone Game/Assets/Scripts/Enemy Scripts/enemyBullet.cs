@@ -10,10 +10,11 @@ public class enemyBullet : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // Destroy the player
-            collision.gameObject.SetActive(false);
+            //collision.gameObject.SetActive(false);
+            
 
             // Destroy this bullet
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
         // Destroy bullet if it hits a wall or bottom

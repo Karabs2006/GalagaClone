@@ -8,6 +8,8 @@ TagManager:
   - Bottom
   - Top
   - Enemy
+  - Enemy Bullet
+  - Diving Enemy
   layers:
   - Default
   - TransparentFX

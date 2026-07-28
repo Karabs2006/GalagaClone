@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyDive : MonoBehaviour
 {
@@ -26,8 +27,15 @@ public class EnemyDive : MonoBehaviour
     private float diveDuration = 1.2f;
     private bool isDiving = false;
 
+
+
+
+    public PlayerDeath playerDeath;
+
     void Start()
     {
+
+    
         rb = GetComponent<Rigidbody2D>();
 
         // Find the player
@@ -151,10 +159,42 @@ public class EnemyDive : MonoBehaviour
             movingRight = !movingRight;
         }
         if (col.gameObject.CompareTag("Player") && currentState == State.Diving)
-        {
+        {   
+
+
+            PlayerDeath playerDeath = col.gameObject.GetComponent<PlayerDeath>();
+
+
             Debug.Log("EnemyDive: CRASHED INTO PLAYER!");
-            col.gameObject.SetActive(false);
+
+            //col.gameObject.SetActive(false);
+
+
+            //Player UI Change when crash into player
+
+            playerDeath.lifeCounter--;
             Destroy(gameObject);
+
+            if(playerDeath.lifeCounter == 1)
+            {   
+                playerDeath.firstLife.SetActive(false);
+                playerDeath.StartCoroutine(playerDeath.Respawn());
+
+            }
+
+            if (playerDeath.lifeCounter == 0)
+            {
+                playerDeath.secondLife.SetActive(false);
+                playerDeath.StartCoroutine(playerDeath.Respawn());
+            }
+
+            if (playerDeath.lifeCounter == -1)
+            {
+                SceneManager.LoadSceneAsync("Game Over");
+            }
+
+
+            //Destroy(gameObject);
         }
     }
 }

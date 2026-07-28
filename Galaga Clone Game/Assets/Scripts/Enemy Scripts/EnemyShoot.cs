@@ -67,6 +67,7 @@ public class EnemyShoot : MonoBehaviour
     {
         GameObject bullet = new GameObject("EnemyBullet");
         bullet.transform.position = transform.position;
+        bullet.tag = "Enemy Bullet";
 
 
         Rigidbody2D rb = bullet.AddComponent<Rigidbody2D>();

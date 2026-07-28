@@ -166,3 +166,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 580310577021970547}
+  score: {fileID: 0}
+  scoreInt: 0

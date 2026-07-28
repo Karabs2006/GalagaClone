@@ -250,4 +250,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1.5
   bulletSpeed: 8
-  bullet: {fileID: 3627850369060606857, guid: 6e56b15c81e9d654a9ce7df187d45177, type: 3}
