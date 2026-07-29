@@ -100,6 +100,6 @@ public class EnemyShoot : MonoBehaviour
         texture.SetPixels(colors);
         texture.Apply();
 
-        return Sprite.Create(texture, new Rect(0, 0, 32, 32), new Vector2(0.5f, 0.5f));
+        return Sprite.Create(texture, new Rect(0, 0, 15, 15), new Vector2(0.5f, 0.3f));
     }
 }

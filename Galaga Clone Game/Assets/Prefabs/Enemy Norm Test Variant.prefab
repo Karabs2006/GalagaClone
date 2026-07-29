@@ -118,16 +118,20 @@ PrefabInstance:
       objectReference: {fileID: 3627850369060606857, guid: 6e56b15c81e9d654a9ce7df187d45177, type: 3}
     - target: {fileID: 8745410758908611563, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: fireRate
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8745410758908611563, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: bulletSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8745410758908611563, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: enemyBullet
       value: 
       objectReference: {fileID: 3627850369060606857, guid: 6e56b15c81e9d654a9ce7df187d45177, type: 3}
+    - target: {fileID: 9141593334331637965, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: horizontalSway
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

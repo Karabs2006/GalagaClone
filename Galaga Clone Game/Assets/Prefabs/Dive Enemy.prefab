@@ -182,6 +182,7 @@ MonoBehaviour:
   returnSpeed: 10
   timeBeforeDive: 2
   diveDelayRange: 2
+  playerDeath: {fileID: 0}
 --- !u!95 &970958518378127252
 Animator:
   serializedVersion: 7
@@ -248,5 +249,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87c200215bdd95468e511eeaf6d0264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1.5
-  bulletSpeed: 8
+  fireRate: 0.7
+  bulletSpeed: 4
