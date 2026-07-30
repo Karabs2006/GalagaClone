@@ -47,9 +47,12 @@ public class EnemyShoot : MonoBehaviour
 
     private float timer = 0f;
 
+    private AudioControl audioControl;
+
     void Start()
     {
         enabled = true;
+        audioControl = FindFirstObjectByType<AudioControl>();
     }
 
     void Update()
@@ -65,6 +68,7 @@ public class EnemyShoot : MonoBehaviour
 
     void Shoot()
     {
+        audioControl.PlayEnemyAudio();
         GameObject bullet = new GameObject("EnemyBullet");
         bullet.transform.position = transform.position;
         bullet.tag = "Enemy Bullet";

@@ -7,11 +7,16 @@ public class BulletScript : MonoBehaviour
     public Rigidbody2D bullet;
     public TMP_Text score;
     public int scoreInt = 1 ;
+    
+
+
+    private AudioControl audioControl;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioControl = FindFirstObjectByType<AudioControl>();
         bullet = this.gameObject.GetComponent<Rigidbody2D>();
         score = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
         score.text = $"{PlayerScore.finalScore}";
@@ -27,12 +32,18 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            
             Debug.Log("Bullet hit enemy: " + collision.gameObject.name);
 
+        
+           
             // Destroy the enemy
             Destroy(collision.gameObject);
             PlayerScore.finalScore += 30;
             score.text = $"{PlayerScore.finalScore}";
+
+            //AudioControl audioControl = GetComponent<AudioControl>();
+            audioControl.PlayAudio();
 
             // Destroy the bullet
             Destroy(gameObject);

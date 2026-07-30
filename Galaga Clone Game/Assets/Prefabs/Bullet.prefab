@@ -168,3 +168,4 @@ MonoBehaviour:
   bullet: {fileID: 580310577021970547}
   score: {fileID: 0}
   scoreInt: 0
+  hitEffect: {fileID: 3707573302024203599, guid: 411874fb9de8e58408ab81040339a469, type: 3}

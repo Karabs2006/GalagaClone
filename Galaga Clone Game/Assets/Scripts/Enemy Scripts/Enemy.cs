@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private float startX;
     private float timer = 1f;
     public int sortingOrder = 0; // For layer sorting
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

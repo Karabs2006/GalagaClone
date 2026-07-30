@@ -4,6 +4,7 @@ public class enemyBullet : MonoBehaviour
 {
     public static bool isPlayerRespawning = false;
     private float spawnTimer = 0f; 
+    
 
     void Update() 
     {

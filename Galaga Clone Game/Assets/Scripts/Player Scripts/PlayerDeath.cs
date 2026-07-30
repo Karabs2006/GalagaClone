@@ -13,9 +13,10 @@ public class PlayerDeath : MonoBehaviour
 
     public bool isPlayerInvincible = false;
 
-   
+    public AudioSource audioSource;
+    public AudioClip audioClip;
 
-    
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,6 +42,7 @@ public class PlayerDeath : MonoBehaviour
 
             if(lifeCounter == 1)
             {   
+                audioSource.PlayOneShot(audioClip);
                 firstLife.SetActive(false);
                 StartCoroutine(Respawn());
 
@@ -48,6 +50,7 @@ public class PlayerDeath : MonoBehaviour
 
             if (lifeCounter == 0)
             {
+                audioSource.PlayOneShot(audioClip);
                 secondLife.SetActive(false);
                 StartCoroutine(Respawn());
             }
@@ -100,10 +103,6 @@ public class PlayerDeath : MonoBehaviour
         gameObject.SetActive(true);
         transform.position = new Vector2(-0.09f, -3.84f);
 
-        // Wait before allowing enemy bullets to hit player again
-        yield return new WaitForSeconds(1.5f); 
-        enemyBullet.isPlayerRespawning = false;
-
         for (int i = 0; i < 8; i++)
         {
             spriteRenderer.enabled = false;
@@ -112,6 +111,12 @@ public class PlayerDeath : MonoBehaviour
             spriteRenderer.enabled = true;
             yield return new WaitForSeconds(0.2f);
         }
+
+        // Wait before allowing enemy bullets to hit player again
+        yield return new WaitForSeconds(1.5f); 
+        enemyBullet.isPlayerRespawning = false;
+
+        
 
         isPlayerInvincible = false;
     }

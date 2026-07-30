@@ -25,6 +25,8 @@ public class Spawner : MonoBehaviour
     private float currentSpeed = 3f;
     private bool isWaiting = false; 
 
+    
+
     void Start()
     {
         StartCoroutine(SpawnWave());

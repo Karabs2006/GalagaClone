@@ -34,9 +34,12 @@ public class EnemyDive : MonoBehaviour
     public PlayerDeath playerDeath;
     private bool isDestroyed = false;
 
+    private AudioControl audioControl;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioControl = FindFirstObjectByType<AudioControl>();
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
@@ -104,6 +107,7 @@ public class EnemyDive : MonoBehaviour
 
     void StartDive()
     {
+        audioControl.PlayDiveAudio();
         isAnyEnemyDiving = true;
         lastDiveEnemy = gameObject;
 
@@ -119,7 +123,8 @@ public class EnemyDive : MonoBehaviour
     }
 
     void Dive()
-    {
+    {   
+        
         diveTimer += Time.deltaTime;
         float progress = Mathf.Clamp01(diveTimer / diveDuration);
 
@@ -210,12 +215,14 @@ public class EnemyDive : MonoBehaviour
 
             if (playerDeath.lifeCounter == 1)
             {
+                playerDeath.audioSource.PlayOneShot(playerDeath.audioClip);
                 playerDeath.firstLife.SetActive(false);
                 playerDeath.StartCoroutine(playerDeath.Respawn());
             }
 
-            if (playerDeath.lifeCounter == 0)
-            {
+            if (playerDeath.lifeCounter == 0) 
+            {   
+                playerDeath.audioSource.PlayOneShot(playerDeath.audioClip);
                 playerDeath.secondLife.SetActive(false);
                 playerDeath.StartCoroutine(playerDeath.Respawn());
             }
