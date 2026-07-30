@@ -59,10 +59,40 @@ public class PlayerDeath : MonoBehaviour
             
         }
     }
-    
+
+
+    /* public IEnumerator Respawn()
+     {
+
+         isPlayerInvincible = true;
+
+         yield return new WaitForSeconds(0.2f);
+         gameObject.SetActive(true);
+         transform.position = new Vector2(-0.09f, -3.84f);
+
+         for(int i = 0; i < 8; i++)
+         {   
+             spriteRenderer.enabled = false;
+             yield return new WaitForSeconds(0.2f);
+
+             spriteRenderer.enabled = true;
+             yield return new WaitForSeconds(0.2f);
+
+         }
+
+         isPlayerInvincible = false;
+
+         //Vector2 spawnPosition = new Vector2(-0.09f, -3.84f);
+         //gameObject.SetActive(true);
+         //Instantiate(gameObject, spawnPosition, Quaternion.identity);
+     }*/
 
     public IEnumerator Respawn()
     {
+        enemyBullet.isPlayerRespawning = true;
+
+        // Wait a moment for bullets to clear
+        yield return new WaitForSeconds(0.2f);
 
         isPlayerInvincible = true;
 
@@ -70,20 +100,19 @@ public class PlayerDeath : MonoBehaviour
         gameObject.SetActive(true);
         transform.position = new Vector2(-0.09f, -3.84f);
 
-        for(int i = 0; i < 8; i++)
-        {   
+        // Wait before allowing enemy bullets to hit player again
+        yield return new WaitForSeconds(1.5f); 
+        enemyBullet.isPlayerRespawning = false;
+
+        for (int i = 0; i < 8; i++)
+        {
             spriteRenderer.enabled = false;
             yield return new WaitForSeconds(0.2f);
 
             spriteRenderer.enabled = true;
             yield return new WaitForSeconds(0.2f);
-            
         }
 
         isPlayerInvincible = false;
-
-        //Vector2 spawnPosition = new Vector2(-0.09f, -3.84f);
-        //gameObject.SetActive(true);
-        //Instantiate(gameObject, spawnPosition, Quaternion.identity);
     }
 }

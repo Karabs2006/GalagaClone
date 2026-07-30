@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Enemy Bullet
   - Diving Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

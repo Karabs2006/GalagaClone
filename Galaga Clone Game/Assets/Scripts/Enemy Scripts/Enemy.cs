@@ -10,13 +10,19 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody2D rb;
     private float startX;
-    private float timer = 0f;
-
+    private float timer = 1f;
+    public int sortingOrder = 0; // For layer sorting
     void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
         startX = transform.position.x;
+
+        // NEW: Set sorting order on sprite renderer
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.sortingOrder = sortingOrder;
+        }
 
         // Start shooting
         EnemyShoot shoot = GetComponent<EnemyShoot>();
