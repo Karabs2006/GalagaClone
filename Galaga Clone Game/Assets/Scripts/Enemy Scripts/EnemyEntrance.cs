@@ -14,15 +14,28 @@ public class EnemyEntrance : MonoBehaviour
     private Vector2 startPosition;
     private Vector2 swoopTarget;
     private float progress = 0f;
-    private bool isInFormation = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+        }
+
         startPosition = transform.position;
         swoopTarget = new Vector2(targetPosition.x, targetPosition.y - swoopDepth);
 
-        Debug.Log(gameObject.name + " spawning, target: " + targetPosition);
+        // Disable all movement scripts temporarily
+        Enemy enemyScript = GetComponent<Enemy>();
+        if (enemyScript != null) enemyScript.enabled = false;
+
+        EnemyDive diveScript = GetComponent<EnemyDive>();
+        if (diveScript != null) diveScript.enabled = false;
+
+        EnemyShoot shoot = GetComponent<EnemyShoot>();
+        if (shoot != null) shoot.enabled = false;
     }
 
     void FixedUpdate()
@@ -52,7 +65,6 @@ public class EnemyEntrance : MonoBehaviour
         {
             currentState = EntranceState.Swooping;
             rb.linearVelocity = Vector2.zero;
-            Debug.Log(gameObject.name + " starting swoop!");
         }
     }
 
@@ -86,15 +98,24 @@ public class EnemyEntrance : MonoBehaviour
             rb.MovePosition(targetPosition);
             rb.linearVelocity = Vector2.zero;
             currentState = EntranceState.InFormation;
-            isInFormation = true;
 
-            Debug.Log(gameObject.name + " in formation!");
+            // Enable the appropriate script based on what type of enemy this is
+            Enemy enemyScript = GetComponent<Enemy>();
+            if (enemyScript != null)
+            {
+                enemyScript.enabled = true;
+                enemyScript.Initialize();
+            }
+
+            EnemyDive diveScript = GetComponent<EnemyDive>();
+            if (diveScript != null)
+            {
+                diveScript.enabled = true;
+                diveScript.Initialize();
+            }
 
             EnemyShoot shoot = GetComponent<EnemyShoot>();
-            if (shoot != null)
-            {
-                shoot.enabled = true;
-            }
+            if (shoot != null) shoot.enabled = true;
         }
     }
 }

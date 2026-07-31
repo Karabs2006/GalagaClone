@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2047447257932228962}
   - component: {fileID: 8501640949429999254}
   - component: {fileID: 970958518378127252}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dive Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8809260325635115700}
   - component: {fileID: 46944093752631686}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnBullets (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

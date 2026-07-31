@@ -250,7 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 453349475}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1932,62 +1932,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1482617797
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1482617799}
-  - component: {fileID: 1482617798}
-  m_Layer: 0
-  m_Name: FormationSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1482617798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482617797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b109691acec186d4d939959daa26cc75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  regularEnemyPrefab: {fileID: 5016519889082580589, guid: 33c011f7cfcb88245aa9ea369e6331bb, type: 3}
-  diveEnemyPrefab: {fileID: 1450643444885848878, guid: 1346afc0dc57a46418eb6788039b28a2, type: 3}
-  columns: 3
-  rows: 5
-  spacingX: 5
-  spacingY: 1
-  formationCenter: {x: 0, y: 4}
-  spawnY: 3
-  entranceSpeed: 4
-  enemySpeed: 2
-  spawnDelay: 0.2
-  timeBetweenWaves: 3
---- !u!4 &1482617799
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482617797}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1548898516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,7 +1947,7 @@ GameObject:
   - component: {fileID: 1548898520}
   - component: {fileID: 1548898519}
   - component: {fileID: 1548898523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2402,6 +2346,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1681054113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1681054115}
+  - component: {fileID: 1681054114}
+  m_Layer: 0
+  m_Name: 'Spanwer '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1681054114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681054113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b109691acec186d4d939959daa26cc75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularEnemyPrefab: {fileID: 5016519889082580589, guid: 33c011f7cfcb88245aa9ea369e6331bb, type: 3}
+  diveEnemyPrefab: {fileID: 1450643444885848878, guid: 1346afc0dc57a46418eb6788039b28a2, type: 3}
+  regularEnemiesPerWave: 3
+  diveEnemiesPerWave: 2
+  timeBetweenWaves: 3
+  spawnDelay: 0.2
+  spawnY: 5.76
+  leftBoundary: -8
+  rightBoundary: 8
+  targetY: 3
+  regularMoveSpeed: 2
+  regularDescentSpeed: 0.3
+  divePatrolSpeed: 3
+  increaseDifficulty: 1
+  extraRegularPerWave: 0
+  extraDivePerWave: 0
+  speedIncreasePerWave: 0.2
+--- !u!4 &1681054115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681054113}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4082909, y: 1.1134042, z: -0.022720367}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1742304413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,6 +2536,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1745008773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8837550954694090982, guid: 22209bd7cdd33dc4fbc5dce1311df938, type: 3}
+  m_PrefabInstance: {fileID: 192888595148542766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1745008778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745008773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f21e859f1682d448a921a8ea2169d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diveEnemyPrefab: {fileID: 1450643444885848878, guid: 1346afc0dc57a46418eb6788039b28a2, type: 3}
+  enemiesPerWave: 2
+  timeBetweenWaves: 4
+  spawnDelay: 0.5
+  spawnXMin: -4
+  spawnXMax: 4
+  spawnY: 5.8
+  targetY: 3.41
+  spacingX: 13.86
 --- !u!1 &1755802372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,6 +3024,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 975205714484318889, guid: 22209bd7cdd33dc4fbc5dce1311df938, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975205714484318889, guid: 22209bd7cdd33dc4fbc5dce1311df938, type: 3}
       propertyPath: timeBetweenWaves
       value: 4
       objectReference: {fileID: 0}
@@ -3042,12 +3077,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837550954694090982, guid: 22209bd7cdd33dc4fbc5dce1311df938, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8837550954694090982, guid: 22209bd7cdd33dc4fbc5dce1311df938, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1745008778}
   m_SourcePrefab: {fileID: 100100000, guid: 22209bd7cdd33dc4fbc5dce1311df938, type: 3}
 --- !u!1001 &196983389105371699
 PrefabInstance:
@@ -3063,7 +3101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1010047964099490742, guid: 67aa6b75e4d721448ba10a031c749a25, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1492572552143135735, guid: 67aa6b75e4d721448ba10a031c749a25, type: 3}
       propertyPath: timeBetweenWaves
@@ -3129,6 +3167,6 @@ SceneRoots:
   - {fileID: 196983389105371699}
   - {fileID: 192888595148542766}
   - {fileID: 859451160}
-  - {fileID: 1482617799}
   - {fileID: 1030732562}
   - {fileID: 1060566210}
+  - {fileID: 1681054115}

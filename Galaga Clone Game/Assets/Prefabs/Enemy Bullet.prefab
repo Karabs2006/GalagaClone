@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9156480662787233424}
   - component: {fileID: 6797749588249482895}
   - component: {fileID: 7638592835177496176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy Bullet
   m_TagString: Enemy Bullet
   m_Icon: {fileID: 0}
@@ -165,4 +165,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4af3ef89fedaa34ca62069339b4b403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeCounter: 2

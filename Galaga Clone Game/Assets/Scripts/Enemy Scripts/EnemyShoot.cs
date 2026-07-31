@@ -38,15 +38,11 @@ public class EnemyShoot : MonoBehaviour
     }
 }
 */
-
-
 {
     [Header("Shooting")]
     public float fireRate = 1.5f;
     public float bulletSpeed = 8f;
-
     private float timer = 0f;
-
     private AudioControl audioControl;
 
     void Start()
@@ -68,11 +64,14 @@ public class EnemyShoot : MonoBehaviour
 
     void Shoot()
     {
-        audioControl.PlayEnemyAudio();
+        if (audioControl != null) audioControl.PlayEnemyAudio();
+
         GameObject bullet = new GameObject("EnemyBullet");
         bullet.transform.position = transform.position;
         bullet.tag = "Enemy Bullet";
 
+        // Set the layer for enemy bullets
+        bullet.layer = LayerMask.NameToLayer("EnemyBullet");
 
         Rigidbody2D rb = bullet.AddComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
@@ -84,13 +83,14 @@ public class EnemyShoot : MonoBehaviour
 
         SpriteRenderer sprite = bullet.AddComponent<SpriteRenderer>();
         sprite.color = Color.red;
-        sprite.sprite = CreateCircleSprite(); // Makes a red circle
+        sprite.sprite = CreateCircleSprite();
 
         enemyBullet bulletScript = bullet.AddComponent<enemyBullet>();
 
-        // Auto-destroy after 3 seconds
+        // Destroy after 3 seconds
         Destroy(bullet, 3f);
     }
+
     Sprite CreateCircleSprite()
     {
         Texture2D texture = new Texture2D(32, 32);
@@ -107,3 +107,4 @@ public class EnemyShoot : MonoBehaviour
         return Sprite.Create(texture, new Rect(0, 0, 15, 15), new Vector2(0.5f, 0.3f));
     }
 }
+

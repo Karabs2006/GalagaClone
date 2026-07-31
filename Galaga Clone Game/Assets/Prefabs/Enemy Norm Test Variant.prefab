@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Norm Test Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1746621950288806078, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638765028413910758, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4486717671746897438, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: m_Size.x
       value: 4.736009
@@ -96,6 +104,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6266291338759138291, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266291338759138291, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6979451484237634096, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -134,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9141593334331637965, guid: cc33e16f942aabc40b9c000dded28e12, type: 3}
       propertyPath: horizontalSway
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
