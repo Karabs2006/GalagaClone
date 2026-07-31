@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6663952817196560632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3491056440756383870}
+  - component: {fileID: 2742134581715816918}
+  m_Layer: 0
+  m_Name: Prime Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3491056440756383870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663952817196560632}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4082909, y: 1.1134042, z: -0.022720367}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2742134581715816918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663952817196560632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b109691acec186d4d939959daa26cc75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularEnemyPrefab: {fileID: 5016519889082580589, guid: 33c011f7cfcb88245aa9ea369e6331bb, type: 3}
+  diveEnemyPrefab: {fileID: 1450643444885848878, guid: 1346afc0dc57a46418eb6788039b28a2, type: 3}
+  regularEnemiesPerWave: 3
+  diveEnemiesPerWave: 2
+  timeBetweenWaves: 3
+  spawnDelay: 0.2
+  spawnY: 5.76
+  leftBoundary: -8
+  rightBoundary: 8
+  targetY: 3
+  regularMoveSpeed: 2
+  regularDescentSpeed: 0.3
+  divePatrolSpeed: 3
+  increaseDifficulty: 1
+  extraRegularPerWave: 0
+  extraDivePerWave: 0
+  speedIncreasePerWave: 0.2
