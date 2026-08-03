@@ -15,8 +15,9 @@ public class PlayerDeath : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip audioClip;
+    public GameObject playerExplosionPrefab;
 
-   
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,7 +41,12 @@ public class PlayerDeath : MonoBehaviour
             lifeCounter--;
             Destroy(collision.gameObject);
 
-            if(lifeCounter == 1)
+            if (playerExplosionPrefab != null)
+            {
+                Instantiate(playerExplosionPrefab, transform.position, Quaternion.identity);
+            }
+
+            if (lifeCounter == 1)
             {   
                 audioSource.PlayOneShot(audioClip);
                 firstLife.SetActive(false);
@@ -90,6 +96,7 @@ public class PlayerDeath : MonoBehaviour
          //Instantiate(gameObject, spawnPosition, Quaternion.identity);
      }*/
 
+   
     public IEnumerator Respawn()
     {
         enemyBullet.isPlayerRespawning = true;

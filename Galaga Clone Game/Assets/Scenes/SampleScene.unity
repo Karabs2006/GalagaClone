@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000002ff70a0b
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2267,6 +2267,7 @@ MonoBehaviour:
   isPlayerInvincible: 0
   audioSource: {fileID: 1742304415}
   audioClip: {fileID: 8300000, guid: 261d5ac0e25c2a04c8f9f89ab8b5dd88, type: 3}
+  playerExplosionPrefab: {fileID: 441731670885278802, guid: 3f2d0216d0c76104e935649b3f895094, type: 3}
 --- !u!1 &1589189314
 GameObject:
   m_ObjectHideFlags: 0

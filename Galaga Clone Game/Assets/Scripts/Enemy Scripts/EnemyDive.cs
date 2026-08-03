@@ -233,6 +233,16 @@ public class EnemyDive : MonoBehaviour
             if (playerDeath != null)
             {
                 playerDeath.lifeCounter--;
+
+                if (playerDeath.playerExplosionPrefab != null)
+                {
+                    Instantiate(
+                        playerDeath.playerExplosionPrefab,
+                        col.transform.position,
+                        Quaternion.identity
+                    );
+                }
+
                 isDestroyed = true;
                 Destroy(gameObject);
 

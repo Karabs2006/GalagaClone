@@ -168,3 +168,4 @@ MonoBehaviour:
   bullet: {fileID: 580310577021970547}
   score: {fileID: 0}
   scoreInt: 0
+  enemyExplosionPrefab: {fileID: 1158313064161540724, guid: d79a077de46a3be428f50b205594df2b, type: 3}

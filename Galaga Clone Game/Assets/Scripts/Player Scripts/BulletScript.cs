@@ -7,7 +7,8 @@ public class BulletScript : MonoBehaviour
     public Rigidbody2D bullet;
     public TMP_Text score;
     public int scoreInt = 1 ;
-    
+    public GameObject enemyExplosionPrefab;
+
 
 
     private AudioControl audioControl;
@@ -35,9 +36,16 @@ public class BulletScript : MonoBehaviour
             
             Debug.Log("Bullet hit enemy: " + collision.gameObject.name);
 
-
+            if (enemyExplosionPrefab != null)
+            {
+                Instantiate(
+                    enemyExplosionPrefab,
+                    collision.transform.position,
+                    Quaternion.identity
+                );
+            }
             // Destroy the enemy
-            
+
             Destroy(collision.gameObject);
             /*
 
