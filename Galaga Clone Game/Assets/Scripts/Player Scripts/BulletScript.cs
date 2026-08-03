@@ -35,11 +35,31 @@ public class BulletScript : MonoBehaviour
             
             Debug.Log("Bullet hit enemy: " + collision.gameObject.name);
 
-        
-           
+
             // Destroy the enemy
+            
             Destroy(collision.gameObject);
+            /*
+
+            if(collision.gameObject.name == "Dive Enemy")
+            {
+                 PlayerScore.finalScore += 45;
+            }
             PlayerScore.finalScore += 30;
+
+            */
+            
+            if (collision.gameObject.GetComponent<EnemyDive>() != null)
+            {
+                PlayerScore.finalScore += 45;
+            }
+            else
+            {
+                PlayerScore.finalScore += 30;
+            }
+
+
+
             score.text = $"{PlayerScore.finalScore}";
 
             //AudioControl audioControl = GetComponent<AudioControl>();
